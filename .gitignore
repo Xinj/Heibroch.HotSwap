@@ -12,4 +12,13 @@
 /NordicApiGateway.Gateways.DaskeBank/obj
 /NordicApiGateways.Interfaces/bin/Debug/netcoreapp3.1
 /NordicApiGateways.Interfaces/obj
-/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/SomeGatewayAPI.Interfaces.pdb
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/SomeGatewayAPI.Interfaces.dll
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwapper.pdb
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwapper.dll
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwap.TestBench.runtimeconfig.json
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwap.TestBench.runtimeconfig.dev.json
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwap.TestBench.pdb
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwap.TestBench.exe
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwap.TestBench.dll
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwap.TestBench.deps.json

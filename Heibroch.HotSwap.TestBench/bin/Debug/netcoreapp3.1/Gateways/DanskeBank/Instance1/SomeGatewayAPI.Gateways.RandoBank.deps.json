@@ -6,28 +6,28 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "NordicApiGateway.Gateways.DanskeBank/1.0.0": {
+      "SomeGatewayAPI.Gateways.RandoBank/1.0.0": {
         "dependencies": {
-          "NordicApiGateway.Interfaces": "1.0.0"
+          "SomeGatewayAPI.Interfaces": "1.0.0"
         },
         "runtime": {
-          "NordicApiGateway.Gateways.DanskeBank.dll": {}
+          "SomeGatewayAPI.Gateways.RandoBank.dll": {}
         }
       },
-      "NordicApiGateway.Interfaces/1.0.0": {
+      "SomeGatewayAPI.Interfaces/1.0.0": {
         "runtime": {
-          "NordicApiGateway.Interfaces.dll": {}
+          "SomeGatewayAPI.Interfaces.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "NordicApiGateway.Gateways.DanskeBank/1.0.0": {
+    "SomeGatewayAPI.Gateways.RandoBank/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "NordicApiGateway.Interfaces/1.0.0": {
+    "SomeGatewayAPI.Interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

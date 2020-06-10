@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heibroch.HotSwap.TestBench"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{A8FF386C-88E2-4C7D-A0A7-34CC7FC9873E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NordicApiGateway.Gateways.DanskeBank", "NordicApiGateway.Gateways.DaskeBank\NordicApiGateway.Gateways.DanskeBank.csproj", "{C733CDCF-45CF-4F4E-A225-7FC3F26E7CE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SomeGatewayAPI.Gateways.RandoBank", "NordicApiGateway.Gateways.DaskeBank\SomeGatewayAPI.Gateways.RandoBank.csproj", "{C733CDCF-45CF-4F4E-A225-7FC3F26E7CE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NordicApiGateway.Interfaces", "NordicApiGateways.Interfaces\NordicApiGateway.Interfaces.csproj", "{A2F9E247-E712-449D-AED7-C7AEF7DF2BDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SomeGatewayAPI.Interfaces", "NordicApiGateways.Interfaces\SomeGatewayAPI.Interfaces.csproj", "{A2F9E247-E712-449D-AED7-C7AEF7DF2BDE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heibroch.HotSwapper", "Heibroch.HotSwapper\Heibroch.HotSwapper.csproj", "{2B6A37F6-3478-44CF-A3E5-3D925FC457C4}"
 EndProject

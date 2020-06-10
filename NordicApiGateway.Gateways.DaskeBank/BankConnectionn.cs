@@ -1,9 +1,9 @@
-﻿using NordicApiGateway.Interfaces;
+﻿using SomeGatewayAPI.Interfaces;
 using System;
 using System.Reflection;
 using System.Threading;
 
-namespace NordicApiGateway.Gateways.DaskeBank
+namespace SomeGatewayAPI.Gateways.DaskeBank
 {
     public class BankConnection : IBankConnection
     {
@@ -18,7 +18,7 @@ namespace NordicApiGateway.Gateways.DaskeBank
         private int DoStuff(ref int param, string message)
         {
             param++;
-            //Thread.Sleep(10); //Simulate load
+            Thread.Sleep(100); //Simulate load
             return param;
         }
 

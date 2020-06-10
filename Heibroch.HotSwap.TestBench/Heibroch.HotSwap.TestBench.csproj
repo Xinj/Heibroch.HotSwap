@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Heibroch.HotSwapper\Heibroch.HotSwapper.csproj" />
-    <ProjectReference Include="..\NordicApiGateways.Interfaces\NordicApiGateway.Interfaces.csproj" />
+    <ProjectReference Include="..\NordicApiGateways.Interfaces\SomeGatewayAPI.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

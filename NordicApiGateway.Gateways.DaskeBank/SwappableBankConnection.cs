@@ -1,7 +1,7 @@
-﻿using NordicApiGateway.Gateways.DaskeBank;
-using NordicApiGateway.Interfaces;
+﻿using SomeGatewayAPI.Gateways.DaskeBank;
+using SomeGatewayAPI.Interfaces;
 
-namespace NordicApiGateway.Gateways.DanskeBank
+namespace SomeGatewayAPI.Gateways.DanskeBank
 {
     public class SwappableBankConnection
     {

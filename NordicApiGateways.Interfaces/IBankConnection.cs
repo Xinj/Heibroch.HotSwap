@@ -1,4 +1,4 @@
-﻿namespace NordicApiGateway.Interfaces
+﻿namespace SomeGatewayAPI.Interfaces
 {
     public interface IBankConnection
     {

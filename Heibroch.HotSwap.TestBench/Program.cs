@@ -1,5 +1,5 @@
 ﻿using Heibroch.HotSwapper;
-using NordicApiGateway.Interfaces;
+using SomeGatewayAPI.Interfaces;
 using System;
 using System.IO;
 using System.Threading;
