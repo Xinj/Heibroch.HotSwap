@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Heibroch.HotSwap.TestBench/v16
+/Heibroch.HotSwap.TestBench/.vs/Heibroch.HotSwap.TestBench
+/Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1
+/Heibroch.HotSwap.TestBench/obj
+/.vs/Heibroch.HotSwap.TestBench/DesignTimeBuild
+/Heibroch.HotSwapper/bin/Debug/netcoreapp3.1
+/Heibroch.HotSwapper/obj
+/NordicApiGateway.Gateways.DaskeBank/bin/Debug/netcoreapp3.1
+/NordicApiGateway.Gateways.DaskeBank/obj
+/NordicApiGateways.Interfaces/bin/Debug/netcoreapp3.1
+/NordicApiGateways.Interfaces/obj
