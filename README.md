@@ -9,3 +9,6 @@ Note that you can throw as many calls to your object as you want. The hotswap ob
 and then switch the instance and spin up a new object before continuing. 
 
 Gudmundur, let me do a demonstration next time - it's actually pretty cool.
+
+Next:
+Either allow for replacing, thus only having a single folder or having automatic error detection, thus falling back to the backup in case of errors. It's a practicality vs safety thing.
