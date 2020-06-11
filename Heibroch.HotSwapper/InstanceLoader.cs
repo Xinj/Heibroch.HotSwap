@@ -17,42 +17,43 @@ namespace Heibroch.HotSwapper
 
         private void UnloadAssemblies(string instanceDirectory)
         {
-            //Clear collections and unload assembly load context            
-            if (instanceDirectory.IsInstance1Directory())
-            {
-                instance1Assemblies.Clear();
-                assemblyLoadContext1 = new AssemblyLoadContext("instance1", true);
-                assemblyLoadContext1.Unload();
-                assemblyLoadContext1 = null;
-            }
-            else
-            {
-                instance2Assemblies.Clear();
-                assemblyLoadContext2 = new AssemblyLoadContext("instance2", true);
-                assemblyLoadContext2.Unload();
-                assemblyLoadContext2 = null;
-            }
-            
-            GC.Collect();
-        }
+            Console.WriteLine($"Disposing instance: \"{instanceDirectory}\"");
 
+            if (instanceDirectory.IsInstance1Directory())
+                UnloadAssembliesInstance(instance1Assemblies, ref assemblyLoadContext1);
+            else
+                UnloadAssembliesInstance(instance2Assemblies, ref assemblyLoadContext2);
+        }
+        
+        private static void UnloadAssembliesInstance(List<Assembly> assemblies, ref AssemblyLoadContext assemblyLoadContext)
+        {
+            //Clear loaded assembly references
+            assemblies.Clear();
+
+            //Unload loaded assemblies
+            assemblyLoadContext.Unload();
+            assemblyLoadContext = null;
+        }
+        
         private void LoadAssemblies(string instanceDirectory)
         {
-            var loadedInstanceAssemblies = instanceDirectory.IsInstance1Directory() ? instance1Assemblies : instance2Assemblies;
-            loadedInstanceAssemblies.Clear();
-
-            AssemblyLoadContext assemblyLoadContext;
-            if (instanceDirectory.IsInstance1Directory())
-                assemblyLoadContext = assemblyLoadContext1 = new AssemblyLoadContext("instance1", true);
+            if  (instanceDirectory.IsInstance1Directory())
+                LoadAssembliesInstance(instanceDirectory, instance1Assemblies, ref assemblyLoadContext1);
             else
-                assemblyLoadContext = assemblyLoadContext2 = new AssemblyLoadContext("instance2", true);
-                                
+                LoadAssembliesInstance(instanceDirectory, instance2Assemblies, ref assemblyLoadContext2);
+        }
+
+        private static void LoadAssembliesInstance(string instanceDirectory, List<Assembly> instanceAssemblies, ref AssemblyLoadContext assemblyLoadContext)
+        {
+            instanceAssemblies.Clear();
+            assemblyLoadContext = new AssemblyLoadContext("instance1", true);
+
             var assemblyFiles = Directory.GetFiles(instanceDirectory, "*.dll");
 
             foreach (var assemblyFilePath in assemblyFiles)
-            {                
+            {
                 var assembly = assemblyLoadContext.LoadFromStream(new MemoryStream(File.ReadAllBytes(assemblyFilePath))); //Had to read bytes instead of LoadFile or else file will be in use for next time we try to replace it :(
-                loadedInstanceAssemblies.Add(assembly);
+                instanceAssemblies.Add(assembly);
             }
         }
 
