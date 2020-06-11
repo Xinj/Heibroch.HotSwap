@@ -22,3 +22,7 @@
 /Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwap.TestBench.exe
 /Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwap.TestBench.dll
 /Heibroch.HotSwap.TestBench/bin/Debug/netcoreapp3.1/Heibroch.HotSwap.TestBench.deps.json
+/SomeGatewayAPI.Gateways.RandoBank/bin/Debug/netcoreapp3.1
+/SomeGatewayAPI.Gateways.RandoBank/obj
+/SomeGatewayAPI.Interfaces/bin/Debug/netcoreapp3.1
+/SomeGatewayAPI.Interfaces/obj

@@ -18,7 +18,7 @@ namespace SomeGatewayAPI.Gateways.DaskeBank
         private int DoStuff(ref int param, string message)
         {
             param++;
-            Thread.Sleep(100); //Simulate load
+            //Thread.Sleep(10); //Simulate load
             return param;
         }
 
