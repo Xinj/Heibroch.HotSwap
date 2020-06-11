@@ -8,7 +8,7 @@ You then replace files in the non-active instance. HotSwappedObject will detect 
 Note that you can throw as many calls to your object as you want. The hotswap object will automatically halt the thread the operations are being called on
 and then switch the instance and spin up a new object before continuing. 
 
-Gudmundur, let me do a demonstration next time - it's actually pretty cool.
+Gudmundur, let me do a demonstration next time - it turned out pretty interesting.
 
 Next:
 Either allow for replacing, thus only having a single folder or having automatic error detection, thus falling back to the backup in case of errors. It's a practicality vs safety thing.
