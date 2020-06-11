@@ -11,22 +11,29 @@ namespace Heibroch.HotSwapper
     {
         private List<Assembly> instance1Assemblies = new List<Assembly>();
         private List<Assembly> instance2Assemblies = new List<Assembly>();
-        
-        private void UnloadAssemblies(List<Assembly> assemblies)
+
+        private AssemblyLoadContext assemblyLoadContext1;
+        private AssemblyLoadContext assemblyLoadContext2;
+
+        private void UnloadAssemblies(string instanceDirectory)
         {
-            assemblies.Clear();
-
-            var assembliesToUnload = assemblies.ToList();
-            assembliesToUnload.Reverse(); //We want to unload in opposite order of how they loaded... Because it sounds good (haven't tested this)
-
-            GC.Collect();
-
-            for (int i = 0; i < assembliesToUnload.Count; i++)
+            //Clear collections and unload assembly load context            
+            if (instanceDirectory.IsInstance1Directory())
             {
-                var assembly = assembliesToUnload[i];
-                assembliesToUnload[i] = null;
-                AssemblyLoadContext.GetLoadContext(assembly).Unload();                
+                instance1Assemblies.Clear();
+                assemblyLoadContext1 = new AssemblyLoadContext("instance1", true);
+                assemblyLoadContext1.Unload();
+                assemblyLoadContext1 = null;
             }
+            else
+            {
+                instance2Assemblies.Clear();
+                assemblyLoadContext2 = new AssemblyLoadContext("instance2", true);
+                assemblyLoadContext2.Unload();
+                assemblyLoadContext2 = null;
+            }
+            
+            GC.Collect();
         }
 
         private void LoadAssemblies(string instanceDirectory)
@@ -34,11 +41,17 @@ namespace Heibroch.HotSwapper
             var loadedInstanceAssemblies = instanceDirectory.IsInstance1Directory() ? instance1Assemblies : instance2Assemblies;
             loadedInstanceAssemblies.Clear();
 
+            AssemblyLoadContext assemblyLoadContext;
+            if (instanceDirectory.IsInstance1Directory())
+                assemblyLoadContext = assemblyLoadContext1 = new AssemblyLoadContext("instance1", true);
+            else
+                assemblyLoadContext = assemblyLoadContext2 = new AssemblyLoadContext("instance2", true);
+                                
             var assemblyFiles = Directory.GetFiles(instanceDirectory, "*.dll");
 
             foreach (var assemblyFilePath in assemblyFiles)
-            {
-                var assembly = Assembly.Load(File.ReadAllBytes(assemblyFilePath)); //Had to read bytes instead of LoadFile or else file will be in use for next time we try to replace it :(
+            {                
+                var assembly = assemblyLoadContext.LoadFromStream(new MemoryStream(File.ReadAllBytes(assemblyFilePath))); //Had to read bytes instead of LoadFile or else file will be in use for next time we try to replace it :(
                 loadedInstanceAssemblies.Add(assembly);
             }
         }
@@ -73,7 +86,7 @@ namespace Heibroch.HotSwapper
 
         public T LoadObject(string fromInstanceDirectory, string toInstanceDirectory)
         {
-            UnloadAssemblies(fromInstanceDirectory.IsInstance1Directory() ? instance1Assemblies : instance2Assemblies);
+            UnloadAssemblies(fromInstanceDirectory);
             return LoadObject(toInstanceDirectory);
         }
     }
